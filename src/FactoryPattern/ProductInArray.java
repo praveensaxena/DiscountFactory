@@ -16,7 +16,9 @@ public class ProductInArray implements ProductAdmin {
     public void addProducts()
     {
         Product shirt       = new Product("11", "Shirt", 20.0);
-        DiscountStrategy qtyDis = DiscountFactory.getInstance().getDiscountStrategy(DiscountFactory.Discounts.QuantityDiscount);
+        DiscountStrategy qtyDis = DiscountFactory
+                .getInstance()
+                .getDiscountStrategy(DiscountFactory.Discounts.QuantityDiscount);
         qtyDis.setDiscountPct(20);
         qtyDis.setMinQuantity(2);
         shirt.setDiscountStrategy(qtyDis);

@@ -6,12 +6,11 @@ package FactoryPattern;
 
 /**
  *
- * @author e1031248
+ * @author Praveen Saxena
  */
 public class DiscountFactory {
 
     public static enum Discounts {
-
         BackToSchool, QuantityDiscount, NODiscount, DollarDiscount
     }
     private static DiscountFactory instance;
@@ -33,9 +32,9 @@ public class DiscountFactory {
     /**
      * This is the actual Factory method.
      *
-     * @param readerType - a type safe enum representing the type of Reader to
+     * @param discountType - a type safe enum representing the type of Reader to
      * create.
-     * @return a Reader built to spec
+     * @return a DiscountStrategy built to spec
      */
     public DiscountStrategy getDiscountStrategy(Discounts discountType) {
         DiscountStrategy d = null;
