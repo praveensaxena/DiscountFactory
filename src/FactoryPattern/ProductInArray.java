@@ -16,24 +16,21 @@ public class ProductInArray implements ProductAdmin {
     public void addProducts()
     {
         Product shirt       = new Product("11", "Shirt", 20.0);
-        DiscountStrategy qtyDis = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.QuantityDiscount);
+        DiscountStrategy qtyDis = AbstractDiscountFactory
+                .getDiscountStrategyInstance(AbstractDiscountFactory.Discounts.QuantityDiscount);
         qtyDis.setDiscountPct(20);
         qtyDis.setMinQuantity(2);
         shirt.setDiscountStrategy(qtyDis);
         
         Product poloShirt   = new Product("22", "PoloShirt", 25.0);
-        DiscountStrategy btsd = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.BackToSchool);
+        DiscountStrategy btsd = AbstractDiscountFactory
+                .getDiscountStrategyInstance(AbstractDiscountFactory.Discounts.BackToSchool);
         btsd.setDiscountPct(20);
         poloShirt.setDiscountStrategy(btsd);
         
         Product shoe        = new Product("33", "Shoe", 80.0);
-        DiscountStrategy dad = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.DollarDiscount);
+        DiscountStrategy dad = AbstractDiscountFactory
+                .getDiscountStrategyInstance(AbstractDiscountFactory.Discounts.DollarDiscount);
         dad.setDollarAmt(10);
         shoe.setDiscountStrategy(dad);
         
