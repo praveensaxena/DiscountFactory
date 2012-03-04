@@ -36,24 +36,24 @@ public class DiscountFactory {
      * create.
      * @return a DiscountStrategy built to spec
      */
-    public DiscountStrategy getDiscountStrategy(AbstractDiscountFactory.Discounts discountType) {
-        DiscountStrategy d = null;
-
-        switch (discountType) {
-            case BackToSchool:
-                d = new BackToSchoolDiscount();
-                break;
-            case QuantityDiscount:
-                d = new QuantityDiscount();
-                break;
-            case NODiscount:
-                d = new NoDiscount();
-                break;
-            case DollarDiscount:
-                d = new DollarDiscount();
-                break;
-        }
-
-        return d;
-    }
+//    public DiscountStrategy getDiscountStrategy(AbstractDiscountFactory.Discounts discountType) {
+//        DiscountStrategy d = null;
+//
+//        switch (discountType) {
+//            case BackToSchool:
+//                d = new BackToSchoolDiscount();
+//                break;
+//            case QuantityDiscount:
+//                d = new QuantityDiscount();
+//                break;
+//            case NODiscount:
+//                d = new NoDiscount();
+//                break;
+//            case DollarDiscount:
+//                d = new DollarDiscount();
+//                break;
+//        }
+//
+//        return d;
+//    }
 }

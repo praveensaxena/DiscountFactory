@@ -11,6 +11,8 @@ package FactoryPattern;
 public class BackToSchoolDiscount implements DiscountStrategy {
 
     private double discountPct = 0;
+    private double dollarAmt = 0;
+    private int minQty = 0;
 
     public BackToSchoolDiscount() {
     }
@@ -36,11 +38,21 @@ public class BackToSchoolDiscount implements DiscountStrategy {
 
     @Override
     public void setMinQuantity(int qty) {
-        
+        this.minQty = qty;
     }
 
     @Override
     public void setDollarAmt(double dollarAmt) {
-        
+        this.dollarAmt = dollarAmt;
+    }
+
+    @Override
+    public int getMinQuantity() {
+        return minQty;
+    }
+
+    @Override
+    public double getDollarAmt() {
+        return dollarAmt;
     }
 }

@@ -10,7 +10,10 @@ package FactoryPattern;
  */
 public class NoDiscount implements DiscountStrategy {
     
-    private double disount_amt = 0;
+    private double disount_amt = 0;   
+    private double discountPct = 0;
+    private double dollarAmt = 0;
+    private int minQty = 0;
     
 
     @Override
@@ -31,6 +34,21 @@ public class NoDiscount implements DiscountStrategy {
     @Override
     public void setDollarAmt(double dollarAmt) {
         
+    }
+
+    @Override
+    public double getDiscountPct() {
+        return discountPct;
+    }
+
+    @Override
+    public int getMinQuantity() {
+        return minQty;
+    }
+
+    @Override
+    public double getDollarAmt() {
+        return dollarAmt;
     }
     
 }

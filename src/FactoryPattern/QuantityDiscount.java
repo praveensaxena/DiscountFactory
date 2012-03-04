@@ -10,30 +10,29 @@ package FactoryPattern;
  */
 public class QuantityDiscount implements DiscountStrategy {
 
-    private int minQuantity = 2;
     private double discountPct = 0;
-    // private static final int MIN_QUANTITY = 5;
-    //  private static final double DISCOUNT_PERCENTAGE = 50;
+    private double dollarAmt = 0;
+    private int minQty = 0;
 
     public QuantityDiscount() {
     }
 
-    
     public QuantityDiscount(int minQty, double discPct) {
-        this.minQuantity = minQty;
+        this.minQty = minQty;
         this.discountPct = discPct;
     }
 
+    @Override
     public int getMinQuantity() {
-        return minQuantity;
+        return minQty;
     }
 
     @Override
     public void setMinQuantity(int minQuantity) {
-        this.minQuantity = minQuantity;
+        this.minQty = minQuantity;
     }
 
-    
+    @Override
     public double getDiscountPct() {
         return discountPct;
     }
@@ -46,7 +45,7 @@ public class QuantityDiscount implements DiscountStrategy {
     @Override
     public double calculateDiscount(double price, int qty) {
         double discountAmt = 0;
-        if (qty >= minQuantity) {
+        if (qty >= minQty) {
             discountAmt = (price * qty * (discountPct / 100));
         }
         return discountAmt;
@@ -54,6 +53,11 @@ public class QuantityDiscount implements DiscountStrategy {
 
     @Override
     public void setDollarAmt(double dollarAmt) {
-        
+        this.dollarAmt = dollarAmt;
+    }
+
+    @Override
+    public double getDollarAmt() {
+        return dollarAmt;
     }
 }
