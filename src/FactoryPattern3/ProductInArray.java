@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package FactoryPattern1;
+package FactoryPattern3;
 
 /**
  *
@@ -16,28 +16,22 @@ public class ProductInArray implements ProductAdmin {
     public void addProducts()
     {
         Product shirt       = new Product("11", "Shirt", 20.0);
-        DiscountStrategy qtyDis = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.QuantityDiscount);
+        DiscountStrategy qtyDis = AbstractDiscountFactory
+                .getDiscountInstance(AbstractDiscountFactory.Discounts.QuantityDiscount);
         qtyDis.setDiscountPct(20);
         qtyDis.setMinQuantity(2);
-        System.out.println("Quantity Disc " + qtyDis.getDiscountPct());
         shirt.setDiscountStrategy(qtyDis);
         
         Product poloShirt   = new Product("22", "PoloShirt", 25.0);
-        DiscountStrategy btsd = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.BackToSchool);
+        DiscountStrategy btsd = AbstractDiscountFactory
+                .getDiscountInstance(AbstractDiscountFactory.Discounts.BackToSchool);
         btsd.setDiscountPct(12);
-        System.out.println("BackToSchool " + btsd.getDiscountPct());
         poloShirt.setDiscountStrategy(btsd);
         
         Product shoe        = new Product("33", "Shoe", 80.0);
-        DiscountStrategy dad = DiscountFactory
-                .getInstance()
-                .getDiscountStrategy(DiscountFactory.Discounts.DollarDiscount);
+        DiscountStrategy dad = AbstractDiscountFactory
+                .getDiscountInstance(AbstractDiscountFactory.Discounts.DollarDiscount);
         dad.setDollarAmt(10);
-        System.out.println("Dollar " + dad.getDollarAmt());
         shoe.setDiscountStrategy(dad);
         
         Product sandel      = new Product("44", "Sandles", 120.0);

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package FactoryPattern1;
+package FactoryPattern2;
 
 /**
  *
@@ -10,9 +10,6 @@ package FactoryPattern1;
  */
 public class DiscountFactory {
 
-    public static enum Discounts {
-        BackToSchool, QuantityDiscount, NODiscount, DollarDiscount
-    }
     private static DiscountFactory instance;
 
     private DiscountFactory() {
@@ -36,7 +33,7 @@ public class DiscountFactory {
      * create.
      * @return a DiscountStrategy built to spec
      */
-    public DiscountStrategy getDiscountStrategy(DiscountFactory.Discounts discountType) {
+    public DiscountStrategy getDiscountStrategy(AbstractDiscountFactory.Discounts discountType) {
         DiscountStrategy d = null;
 
         switch (discountType) {
